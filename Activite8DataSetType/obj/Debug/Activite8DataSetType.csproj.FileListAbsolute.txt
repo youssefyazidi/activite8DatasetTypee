@@ -1,1 +1,9 @@
 C:\Users\YAZIDI\Desktop\Projets CDS 2022\Activite8DataSetType\Activite8DataSetType\bin\Debug\Activite8DataSetType.exe.config
+C:\Users\YAZIDI\Desktop\Projets CDS 2022\Activite8DataSetType\Activite8DataSetType\bin\Debug\Activite8DataSetType.exe
+C:\Users\YAZIDI\Desktop\Projets CDS 2022\Activite8DataSetType\Activite8DataSetType\bin\Debug\Activite8DataSetType.pdb
+C:\Users\YAZIDI\Desktop\Projets CDS 2022\Activite8DataSetType\Activite8DataSetType\obj\Debug\Activite8DataSetType.csprojResolveAssemblyReference.cache
+C:\Users\YAZIDI\Desktop\Projets CDS 2022\Activite8DataSetType\Activite8DataSetType\obj\Debug\Activite8DataSetType.Form1.resources
+C:\Users\YAZIDI\Desktop\Projets CDS 2022\Activite8DataSetType\Activite8DataSetType\obj\Debug\Activite8DataSetType.Properties.Resources.resources
+C:\Users\YAZIDI\Desktop\Projets CDS 2022\Activite8DataSetType\Activite8DataSetType\obj\Debug\Activite8DataSetType.csproj.GenerateResource.Cache
+C:\Users\YAZIDI\Desktop\Projets CDS 2022\Activite8DataSetType\Activite8DataSetType\obj\Debug\Activite8DataSetType.exe
+C:\Users\YAZIDI\Desktop\Projets CDS 2022\Activite8DataSetType\Activite8DataSetType\obj\Debug\Activite8DataSetType.pdb
