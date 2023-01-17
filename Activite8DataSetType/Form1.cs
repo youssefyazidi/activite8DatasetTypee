@@ -39,6 +39,7 @@ namespace Activite8DataSetType
             passionAdapter.Fill(dsp.Passions);
             comboBoxPassions.DataSource = dsp.Passions;
             comboBoxPassions.DisplayMember = "Passion";
+            comboBoxPassions.ValueMember = "IndexPass";
         }
 
         private void initialisePersPass()
@@ -79,17 +80,6 @@ namespace Activite8DataSetType
             initialisePersPass();
         }
 
-        private void GrillePersonnes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-         
-        }
-
-        private void GrillePersonnes_CurrentCellChanged(object sender, EventArgs e)
-        {
-          
-
-        }
-
         private void GrillePersonnes_SelectionChanged(object sender, EventArgs e)
         {
             if (GrillePersonnes.SelectedRows.Count > 0)
@@ -97,6 +87,54 @@ namespace Activite8DataSetType
                 int indice = GrillePersonnes.SelectedRows[0].Index;
                 afficherPassion(indice);
             }
+        }
+
+        private void buttonAjouterPassion_Click(object sender, EventArgs e)
+        {
+            int indice = GrillePersonnes.SelectedRows[0].Index;
+
+            PersonnesRow prow = (PersonnesRow)dsp.Personnes.Rows[indice];
+
+            int indexpass = (int)comboBoxPassions.SelectedValue;
+
+            try
+            {
+                PersPassRow perspassRow = dsp.PersPass.NewPersPassRow();
+                perspassRow.IndexNom = prow.IndexNom;
+                perspassRow.IndexPass = indexpass;
+                dsp.PersPass.Rows.Add(perspassRow);
+                afficherPassion(indice);
+                //MSA de la BD
+                persPassAdapter.Update(dsp.PersPass);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void listBoxPassions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           buttonSupprimerPassion.Enabled=listBoxPassions.SelectedIndices.Count > 0;
+        }
+
+        private void buttonSupprimerPassion_Click(object sender, EventArgs e)
+        {
+
+            int indicePersonne = GrillePersonnes.SelectedRows[0].Index;
+            PersonnesRow prow = (PersonnesRow)dsp.Personnes.Rows[indicePersonne];
+
+            string passion=listBoxPassions.SelectedItem.ToString();
+            MessageBox.Show("Test "+passion);
+            PassionsRow[] passrow=(PassionsRow[])dsp.Passions.Select("Passion='" + passion + "'");
+            //Chercher la ligne dans la table perspass
+           PersPassRow perspassrow=
+                dsp.PersPass.FindByIndexNomIndexPass(prow.IndexNom, passrow[0].IndexPass);    
+            perspassrow.Delete();
+            afficherPassion(indicePersonne);
+
+            //MAS de la BD
+            persPassAdapter.Update(dsp.PersPass);
         }
     }
 }

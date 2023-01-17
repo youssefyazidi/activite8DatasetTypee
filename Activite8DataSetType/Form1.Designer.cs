@@ -34,8 +34,8 @@
             this.listBoxPassions = new System.Windows.Forms.ListBox();
             this.buttonSupprimerPassion = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxPassions = new System.Windows.Forms.ComboBox();
             this.buttonAjouterPassion = new System.Windows.Forms.Button();
+            this.comboBoxPassions = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.GrillePersonnes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,8 +59,6 @@
             this.GrillePersonnes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GrillePersonnes.Size = new System.Drawing.Size(415, 191);
             this.GrillePersonnes.TabIndex = 1;
-            this.GrillePersonnes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillePersonnes_CellContentClick);
-            this.GrillePersonnes.CurrentCellChanged += new System.EventHandler(this.GrillePersonnes_CurrentCellChanged);
             this.GrillePersonnes.SelectionChanged += new System.EventHandler(this.GrillePersonnes_SelectionChanged);
             // 
             // label2
@@ -80,6 +78,7 @@
             this.listBoxPassions.Name = "listBoxPassions";
             this.listBoxPassions.Size = new System.Drawing.Size(224, 147);
             this.listBoxPassions.TabIndex = 3;
+            this.listBoxPassions.SelectedIndexChanged += new System.EventHandler(this.listBoxPassions_SelectedIndexChanged);
             // 
             // buttonSupprimerPassion
             // 
@@ -90,6 +89,7 @@
             this.buttonSupprimerPassion.TabIndex = 4;
             this.buttonSupprimerPassion.Text = "Supprimer passion";
             this.buttonSupprimerPassion.UseVisualStyleBackColor = true;
+            this.buttonSupprimerPassion.Click += new System.EventHandler(this.buttonSupprimerPassion_Click);
             // 
             // groupBox1
             // 
@@ -103,14 +103,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ajout d\'une passion pour la personne";
             // 
-            // comboBoxPassions
-            // 
-            this.comboBoxPassions.FormattingEnabled = true;
-            this.comboBoxPassions.Location = new System.Drawing.Point(6, 38);
-            this.comboBoxPassions.Name = "comboBoxPassions";
-            this.comboBoxPassions.Size = new System.Drawing.Size(384, 21);
-            this.comboBoxPassions.TabIndex = 0;
-            // 
             // buttonAjouterPassion
             // 
             this.buttonAjouterPassion.Location = new System.Drawing.Point(432, 36);
@@ -119,6 +111,15 @@
             this.buttonAjouterPassion.TabIndex = 5;
             this.buttonAjouterPassion.Text = "Ajouter passion";
             this.buttonAjouterPassion.UseVisualStyleBackColor = true;
+            this.buttonAjouterPassion.Click += new System.EventHandler(this.buttonAjouterPassion_Click);
+            // 
+            // comboBoxPassions
+            // 
+            this.comboBoxPassions.FormattingEnabled = true;
+            this.comboBoxPassions.Location = new System.Drawing.Point(6, 38);
+            this.comboBoxPassions.Name = "comboBoxPassions";
+            this.comboBoxPassions.Size = new System.Drawing.Size(384, 21);
+            this.comboBoxPassions.TabIndex = 0;
             // 
             // Form1
             // 
